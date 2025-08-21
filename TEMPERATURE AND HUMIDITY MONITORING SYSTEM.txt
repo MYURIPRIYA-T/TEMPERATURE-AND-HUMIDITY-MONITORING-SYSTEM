@@ -1,0 +1,36 @@
+#include <stdio.h>
+// Function to check and display temperature status
+void checkTemperature(float temp) {
+    if (temp < 18.0f) {
+        printf("Temperature: %.2f C -> Too Cold\n", temp);
+    } 
+    else if (temp >= 18.0f && temp <= 30.0f) {
+        printf("Temperature: %.2f C -> Normal\n", temp);
+    } 
+    else {
+        printf("Temperature: %.2f C -> Too Hot\n", temp);
+    }
+}
+// Function to check and display humidity status
+void checkHumidity(float hum) {
+    if (hum < 30.0f) {
+        printf("Humidity: %.2f%% -> Too Dry\n", hum);
+    } 
+    else if (hum >= 30.0f && hum <= 60.0f) {
+        printf("Humidity: %.2f%% -> Comfortable\n", hum);
+    } 
+    else {
+        printf("Humidity: %.2f%% -> Too Humid\n", hum);
+    }
+}
+int main() {
+    float temperature, humidity;
+    printf("Enter Temperature (C): ");
+    scanf("%f", &temperature);
+    printf("Enter Humidity (%%): ");
+    scanf("%f", &humidity);
+    printf("\n--- Monitoring System Result ---\n");
+    checkTemperature(temperature);
+    checkHumidity(humidity);
+    return 0;
+}
